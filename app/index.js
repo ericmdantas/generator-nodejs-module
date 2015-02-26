@@ -41,4 +41,4 @@ NodeJsModule.prototype.install = function()
   this.installDependencies({skipInstall: this.options['skip-install']});
 }
 
-module.exports = NodeJsModule;
+module.exports = NodeJsModule; 
