@@ -36,15 +36,18 @@ Answer the questions that'll show, and then BOOM!
 You've got:
 
 - tests ready to be run: 
-    -- Use chai with your favourite syntax (expect, should, etc);
-    -- Coverage setup;
+    > Use chai with your favourite syntax (expect, should, etc);
+    
+    > Coverage setup;
 
 - .gitignore and package.json configured.
   
 - Integrations ready: 
-    -- Travis CI integration;
-    -- Coveralls integration;
-    -- Test on your CI server!
+    > Travis CI integration;
+    
+    > Coveralls integration;
+    
+    > Test on your CI server!
     
 - README with both Travis CI and coveralls badge;    
 
