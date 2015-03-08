@@ -13,12 +13,13 @@ describe('nodejs-module:app', function ()
       .run(path.join(__dirname, '../app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
+      .withPrompts({ 'appName': 'my-app', 'githubUsername': 'my-username'})
       .on('end', done);
   });
 
   it('creates files', function ()
   {
-    assert.file([
+    var _files = [
       '.editorconfig',
       '.jshintrc',
       '.gitignore',
@@ -28,6 +29,8 @@ describe('nodejs-module:app', function ()
       'index.js',
       'lib/index.js',
       'tests/app_test.js'
-    ]);
+    ];
+
+    assert.file(_files);
   });
 });

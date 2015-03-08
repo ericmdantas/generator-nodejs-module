@@ -1,6 +1,6 @@
 {
-  "name": "package",
-  "version": "0.0.0",
+  "name": "<%= app %>",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "scripts":
   {
@@ -10,7 +10,7 @@
   },
   "dependencies":
   {
-    "lodash": "3.0.0"
+    "lodash": "^3.0.0"
   },
   "devDependencies":
   {
@@ -18,5 +18,17 @@
     "chai": "^2.0.0",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.5"
-  }
+  },
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/<%= username %>/<%= app %>.git"
+  },
+  "author": "<%= username %>",
+  "license": "MIT",
+  "bugs": 
+  {
+    "url": "https://github.com/<%= username %>/<%= app %>/issues"
+  },
+  "homepage": "https://github.com/<%= username %>/<%= app %>"
 }
