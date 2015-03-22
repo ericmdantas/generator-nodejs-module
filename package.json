@@ -21,7 +21,14 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "nodejs-generator",
+    "nodejs-module-generator",
+    "iojs-generator",
+    "iojs-module-generator",
+    "iojs-es6-generator",
+    "es6",
+    "iojs"
   ],
   "dependencies": {
     "babel": "^4.7.16",
