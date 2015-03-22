@@ -17,6 +17,7 @@ Focus on your app logic; forget about all the initial repetitive setup.
 # why?
 
 This generator was created to make the creation of modules for NodeJS / iojs as easy as possible.
+
 It has all the best tools to make your app ready to go as fast as possible.
 
 
