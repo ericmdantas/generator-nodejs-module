@@ -20,7 +20,6 @@ describe('nodejs-module:app', function ()
   it('creates files', function ()
   {
     var _files = [
-      '.editorconfig',
       '.jshintrc',
       '.gitignore',
       '.npmignore',

@@ -29,7 +29,6 @@ var Generator = (function () {
     this.fs.copy(this.templatePath('_.gitignore'), this.destinationPath('.gitignore'));
     this.fs.copy(this.templatePath('_.npmignore'), this.destinationPath('.npmignore'));
     this.fs.copy(this.templatePath('_.travis.yml'), this.destinationPath('.travis.yml'));
-    this.fs.copy(this.templatePath('_editorconfig'), this.destinationPath('.editorconfig'));
   };
 
   Generator.prototype.installStuff = function installStuff() {
