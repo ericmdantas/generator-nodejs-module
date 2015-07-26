@@ -10,7 +10,7 @@ var Generator = (function () {
   }
 
   Generator.prototype.sayHello = function sayHello() {
-    this.log(yosay('Welcome to the amazing ' + chalk.green('NodeJS Module') + ' generator!'));
+    this.log(this.say('Welcome to the amazing ' + this.chalk.green('NodeJS Module') + ' generator!'));
   };
 
   Generator.prototype.copyFiles = function copyFiles() {
@@ -25,11 +25,11 @@ var Generator = (function () {
     this.template('_package.json', 'package.json', _appNameAndUsernameGithub);
     this.template('_README.md', 'README.md', _appNameAndUsernameGithub);
 
-    this.fs.copy(this.templatePath('jshintrc'), this.destinationPath('.jshintrc'));
-    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
-    this.fs.copy(this.templatePath('.npmignore'), this.destinationPath('.npmignore'));
-    this.fs.copy(this.templatePath('.travis.yml'), this.destinationPath('.travis.yml'));
-    this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'));
+    this.fs.copy(this.templatePath('_jshintrc'), this.destinationPath('.jshintrc'));
+    this.fs.copy(this.templatePath('_.gitignore'), this.destinationPath('.gitignore'));
+    this.fs.copy(this.templatePath('_.npmignore'), this.destinationPath('.npmignore'));
+    this.fs.copy(this.templatePath('_.travis.yml'), this.destinationPath('.travis.yml'));
+    this.fs.copy(this.templatePath('_editorconfig'), this.destinationPath('.editorconfig'));
   };
 
   Generator.prototype.installStuff = function installStuff() {

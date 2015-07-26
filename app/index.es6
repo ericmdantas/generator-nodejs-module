@@ -8,6 +8,9 @@ import Generator from './generator';
 export default class NodeJsModule extends Base {
     constructor(args, options, config) {
         super(args, options, config);
+        this.say = yosay;
+        this.chalk = chalk;
+
         this.gen = new Generator();
     }
 

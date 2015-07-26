@@ -29,6 +29,9 @@ var NodeJsModule = (function (_Base) {
         _classCallCheck(this, NodeJsModule);
 
         _Base.call(this, args, options, config);
+        this.say = _yosay2['default'];
+        this.chalk = _chalk2['default'];
+
         this.gen = new _generator2['default']();
     }
 

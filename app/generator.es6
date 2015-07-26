@@ -1,6 +1,7 @@
 export default class Generator {
+
   sayHello() {
-    this.log(yosay(`Welcome to the amazing ${chalk.green('NodeJS Module')} generator!`));
+    this.log(this.say(`Welcome to the amazing ${this.chalk.green('NodeJS Module')} generator!`));
   }
 
   copyFiles() {
