@@ -1,77 +1,59 @@
 "use strict";
 
-var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+exports.__esModule = true;
 
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var yeoman = require("yeoman-generator");
-var chalk = require("chalk");
-var yosay = require("yosay");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var NodeJsModule = (function (_yeoman$generators$Base) {
-  function NodeJsModule(args, options, config) {
-    _classCallCheck(this, NodeJsModule);
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-    yeoman.generators.Base.apply(this, arguments);
-  }
+var _yeomanGenerator = require('yeoman-generator');
 
-  _inherits(NodeJsModule, _yeoman$generators$Base);
+var _chalk = require('chalk');
 
-  NodeJsModule.prototype.initializing = function initializing() {
-    this.pkg = require("../package.json");
-  };
+var _chalk2 = _interopRequireDefault(_chalk);
 
-  NodeJsModule.prototype.prompting = function prompting() {
-    this.log(yosay("Welcome to the amazing" + chalk.green(" NodeJS Module ") + " generator!"));
-  };
+var _yosay = require('yosay');
 
-  NodeJsModule.prototype.writing = function writing() {
-    var _app = { app: this.appName };
-    var _usernameGithub = { username: this.githubUsername };
-    var _appNameAndUsernameGithub = { username: _usernameGithub.username, app: _app.app };
+var _yosay2 = _interopRequireDefault(_yosay);
 
-    this.fs.copy(this.templatePath("_index.js"), this.destinationPath("index.js"));
-    this.fs.copy(this.templatePath("lib/_libIndex.js"), this.destinationPath("lib/index.js"));
-    this.fs.copy(this.templatePath("tests/_app_test.js"), this.destinationPath("tests/app_test.js"));
+var _generator = require('./generator');
 
-    this.template("_package.json", "package.json", _appNameAndUsernameGithub);
-    this.template("_README.md", "README.md", _appNameAndUsernameGithub);
+var _generator2 = _interopRequireDefault(_generator);
 
-    this.fs.copy(this.templatePath("jshintrc"), this.destinationPath(".jshintrc"));
-    this.fs.copy(this.templatePath(".gitignore"), this.destinationPath(".gitignore"));
-    this.fs.copy(this.templatePath(".npmignore"), this.destinationPath(".npmignore"));
-    this.fs.copy(this.templatePath(".travis.yml"), this.destinationPath(".travis.yml"));
-    this.fs.copy(this.templatePath("editorconfig"), this.destinationPath(".editorconfig"));
-  };
+var NodeJsModule = (function (_Base) {
+    _inherits(NodeJsModule, _Base);
 
-  NodeJsModule.prototype.install = function install() {
-    var _installOpts = { skipInstall: this.options["skip-install"], bower: false, npm: true };
+    function NodeJsModule(args, options, config) {
+        _classCallCheck(this, NodeJsModule);
 
-    this.installDependencies(_installOpts);
-  };
+        _Base.call(this, args, options, config);
+        this.gen = new _generator2['default']();
+    }
 
-  NodeJsModule.prototype.showPrompts = function showPrompts() {
-    var done = this.async();
+    NodeJsModule.prototype.initializing = function initializing() {
+        this.pkg = require('../package.json');
+    };
 
-    var prompts = [{
-      name: "appName",
-      message: "What is the name of your module?",
-      "default": "an-awesome-name-goes-here"
-    }, {
-      name: "githubUsername",
-      message: "What is your username on Github?",
-      "default": "an-awesome-username-goes-here"
-    }];
+    NodeJsModule.prototype.prompting = function prompting() {
+        this.gen.sayHello.call(this);
+    };
 
-    this.prompt(prompts, (function (props) {
-      this.appName = props.appName;
-      this.githubUsername = props.githubUsername;
+    NodeJsModule.prototype.writing = function writing() {
+        this.gen.copyFiles.call(this);
+    };
 
-      done();
-    }).bind(this));
-  };
+    NodeJsModule.prototype.install = function install() {
+        this.gen.installStuff.call(this);
+    };
 
-  return NodeJsModule;
-})(yeoman.generators.Base);
+    NodeJsModule.prototype.showPrompts = function showPrompts() {
+        this.gen.showPrompts.call(this);
+    };
 
-module.exports = NodeJsModule;
+    return NodeJsModule;
+})(_yeomanGenerator.Base);
+
+exports['default'] = NodeJsModule;
+module.exports = exports['default'];
