@@ -1,5 +1,4 @@
 export default class Generator {
-
   sayHello() {
     this.log(this.say(`Welcome to the amazing ${this.chalk.green('NodeJS Module')} generator!`));
   }
@@ -44,12 +43,11 @@ export default class Generator {
       }
     ];
 
-    this.prompt(prompts, props => {
+    this.prompt(prompts, (props) => {
       this.appName = props.appName;
       this.githubUsername = props.githubUsername;
 
       done();
-
     });
   }
 }

@@ -16,8 +16,8 @@
     "start": "gulp transpile",
     "s-dev": "gulp transpile_watch",
     "build": "gulp transpile && npm t",
-    "test": "mocha --reporter min",
-    "tw": "mocha --watch --reporter min"
+    "test": "mocha --reporter min --require babel/register",
+    "tw": "mocha --watch --reporter min --require babel/register"
   },
   "files": [
     "app"
@@ -33,17 +33,16 @@
     "iojs"
   ],
   "dependencies": {
-    "babel": "^4.7.16",
     "chalk": "^0.5.0",
     "yeoman-generator": "^0.18.0",
     "yosay": "^0.3.0"
   },
   "devDependencies": {
-    "gulp-watch": "^4.3.4",
-    "mocha": "*"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
+    "babel": "^5.8.23",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-watch": "^4.3.5",
+    "mocha": "^2.3.3"
   },
   "bugs": {
     "url": "https://github.com/ericmdantas/generator-nodejs-module/issues"
