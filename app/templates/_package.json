@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "scripts":
   {
-     "test": "mocha ./tests/*_test.js --recursive --check-leaks --reporter min",
+     "test": "mocha ./tests/*_test.js --recursive --check-leaks --reporter min --require babel/register",
      "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/*_test.js",
      "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/*_test.js --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
@@ -12,12 +12,12 @@
   {
     "lodash": "^3.0.0"
   },
-  "devDependencies":
-  {
+  "devDependencies": {
     "mocha": "^2.1.0",
     "chai": "^2.0.0",
     "coveralls": "^2.11.2",
-    "istanbul": "^0.3.5"
+    "istanbul": "^0.3.5",
+    "babel": "^5.8.23"
   },
   "repository":
   {
@@ -26,7 +26,7 @@
   },
   "author": "<%= username %>",
   "license": "MIT",
-  "bugs": 
+  "bugs":
   {
     "url": "https://github.com/<%= username %>/<%= app %>/issues"
   },

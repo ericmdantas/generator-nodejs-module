@@ -1,14 +1,10 @@
-'use strict';
+import path from 'path';
+import {assert} from 'yeoman-generator';
+import {test as helpers} from 'yeoman-generator';
+import os from 'os';
 
-var path = require('path');
-var assert = require('yeoman-generator').assert;
-var helpers = require('yeoman-generator').test;
-var os = require('os');
-
-describe('nodejs-module:app', function ()
-{
-  before(function (done)
-  {
+describe('nodejs-module:app', () => {
+  before((done) => {
     helpers
       .run(path.join(__dirname, '../app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
@@ -17,8 +13,7 @@ describe('nodejs-module:app', function ()
       .on('end', done);
   });
 
-  it('creates files', function ()
-  {
+  it('creates files', () => {
     var _files = [
       '.jshintrc',
       '.gitignore',
