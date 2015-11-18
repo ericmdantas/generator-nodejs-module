@@ -1,5 +1,3 @@
 {
-  "loose": true,
-  "blacklist": [],
-  "optional": []
+  "presets": ["es2015", "stage-0"]
 }

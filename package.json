@@ -13,11 +13,9 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "gulp transpile",
-    "s-dev": "gulp transpile_watch",
-    "build": "gulp transpile && npm t",
-    "test": "mocha --reporter min --require babel/register",
-    "tw": "mocha --watch --reporter min --require babel/register"
+    "start": "gulp compile",
+    "build": "gulp compile && npm t",
+    "test": "mocha --reporter min --require babel-core/register"
   },
   "files": [
     "app"
@@ -38,10 +36,13 @@
     "yosay": "^0.3.0"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel": "^5.8.34",
+    "babel-cli": "^6.1.18",
+    "babel-core": "^6.1.21",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18",
     "gulp": "^3.9.0",
-    "gulp-babel": "^5.2.1",
-    "gulp-watch": "^4.3.5",
+    "gulp-babel": "^6.1.0",
     "mocha": "^2.3.3"
   },
   "bugs": {
