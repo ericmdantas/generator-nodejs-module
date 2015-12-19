@@ -20,11 +20,6 @@
   "files": [
     "app"
   ],
-  "babel": {
-    "plugins": [
-      "transform-es2015-modules-commonjs"
-    ]
-  },
   "keywords": [
     "yeoman-generator",
     "nodejs-generator",
